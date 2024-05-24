@@ -8,15 +8,6 @@ const sequelize = new Sequelize('tinhdevcode', 'root', null, {
     logging: false
 });
 
-// let connectDB = () => {
-//     sequelize.authenticate()
-//         .then(() => {
-//             console.log('Connection has been established successfully.');
-//         })
-//         .catch(err => {
-//             console.error('Unable to connect to the database:', err);
-//         });
-// }
 
 let connectDB = async () => {
     try {
