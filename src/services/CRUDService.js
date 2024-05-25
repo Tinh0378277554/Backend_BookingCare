@@ -3,6 +3,7 @@ import db from '../models/index';
 
 const salt = bcrypt.genSaltSync(10);
 
+
 let createNewUser = async (data) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -19,7 +20,7 @@ let createNewUser = async (data) => {
                 roleId: data.roleId
             })
 
-            resolve();
+            resolve('ok! create a new user succeed');
 
         } catch (e) {
             reject(e);
