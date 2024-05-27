@@ -15,6 +15,10 @@ let initWebRoutes = (app) => {
     // show dữ liệu từ data ra view
     router.get('/get-crud', homeController.displayGetCRUD);
 
+
+    router.get('/edit-crud', homeController.getEditCRUD);
+    router.post('/put-crud', homeController.putCRUD);
+
     router.get('/tinh', (req, res) => {
         return res.send(' Bui Thuan Tinh 123')
     });
