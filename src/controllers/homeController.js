@@ -24,9 +24,6 @@ let postCRUD = async (req, res) => {
 }
 let displayGetCRUD = async (req, res) => {
     let data = await CRUDService.getAllUser()
-    console.log('--------------')
-    console.log(data)
-    console.log('--------------')
     return res.render('test/displayCRUD.ejs', {
         // thêm 1 cái object tại đây để lấy data show ra view
         dataTable: data
@@ -56,6 +53,18 @@ let putCRUD = async (req, res) => {
     })
 }
 
+let deleteCRUD = async (req, res) => {
+    let id = req.query.id
+
+    if (id) {
+        await CRUDService.deleteUserById(id)
+        return res.send('delete user the succeed')
+    } else {
+        return res.send('delete user the failed')
+    }
+
+}
+
 // exports ra 1 cái object 
 module.exports = {
     getHomePage: getHomePage,
@@ -64,4 +73,5 @@ module.exports = {
     displayGetCRUD: displayGetCRUD,
     getEditCRUD: getEditCRUD,
     putCRUD: putCRUD,
+    deleteCRUD: deleteCRUD,
 }
